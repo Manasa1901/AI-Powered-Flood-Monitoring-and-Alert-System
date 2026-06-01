@@ -1,0 +1,385 @@
+.App {
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.app-header {
+  background: linear-gradient(135deg, #0a1628 0%, #0d2144 40%, #0f3460 100%);
+  padding: 2.5rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(33, 150, 243, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(66, 165, 245, 0.08) 0%, transparent 40%);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(33, 150, 243, 0.15);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  color: #90caf9;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.header-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #90caf9 60%, #42a5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.header-content p {
+  font-size: 1rem;
+  color: #90caf9;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.header-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.header-wave svg {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+/* ── Nav ── */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  background: rgba(7, 13, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(33, 150, 243, 0.12);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar button {
+  padding: 0.55rem 1.1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #90a4ae;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.nav-bar button:hover {
+  background: rgba(33, 150, 243, 0.1);
+  border-color: rgba(33, 150, 243, 0.25);
+  color: #e2e8f0;
+}
+
+.nav-bar button.active {
+  background: rgba(33, 150, 243, 0.18);
+  border-color: rgba(33, 150, 243, 0.5);
+  color: #42a5f5;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(33, 150, 243, 0.15);
+}
+
+/* ── Main ── */
+.main-content {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ── Cards ── */
+.card {
+  background: rgba(13, 27, 46, 0.8);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+  border: 1px solid rgba(33, 150, 243, 0.12);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(33, 150, 243, 0.22);
+}
+
+.card h2 {
+  color: #e2e8f0;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card h3 {
+  color: #90caf9;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ── Stat Cards ── */
+.stat-card {
+  background: rgba(33, 150, 243, 0.06);
+  border: 1px solid rgba(33, 150, 243, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.stat-card:hover {
+  background: rgba(33, 150, 243, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-card .stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #42a5f5;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+  font-size: 0.78rem;
+  color: #78909c;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* ── Buttons ── */
+button.primary {
+  background: linear-gradient(135deg, #1565c0, #1976d2);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+button.primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent);
+}
+
+button.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21, 101, 192, 0.5);
+  background: linear-gradient(135deg, #1976d2, #1e88e5);
+}
+
+button.primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Form Elements ── */
+label.field-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #78909c;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input, select {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  color: #e2e8f0;
+  padding: 0.7rem 0.9rem;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #1976d2;
+  background: rgba(25, 118, 210, 0.08);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+input::placeholder { color: #455a64; }
+
+option { background: #0d1b2e; color: #e2e8f0; }
+
+/* ── Risk Badges ── */
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.risk-badge.low {
+  background: rgba(76, 175, 80, 0.12);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.risk-badge.medium {
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffd54f;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.risk-badge.high {
+  background: rgba(255, 152, 0, 0.12);
+  color: #ffa726;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  animation: pulse-high 2s infinite;
+}
+
+.risk-badge.critical {
+  background: rgba(244, 67, 54, 0.12);
+  color: #ef5350;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  animation: pulse-critical 1.5s infinite;
+}
+
+@keyframes pulse-high {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.15); }
+}
+
+@keyframes pulse-critical {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+  50% { box-shadow: 0 0 0 5px rgba(244, 67, 54, 0.2); }
+}
+
+/* ── Message Banners ── */
+.msg-banner {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.msg-banner.success { background: rgba(76, 175, 80, 0.12); color: #66bb6a; border: 1px solid rgba(76, 175, 80, 0.25); }
+.msg-banner.warning { background: rgba(255, 152, 0, 0.12); color: #ffa726; border: 1px solid rgba(255, 152, 0, 0.25); }
+.msg-banner.error   { background: rgba(244, 67, 54, 0.12);  color: #ef5350; border: 1px solid rgba(244, 67, 54, 0.25); }
+.msg-banner.info    { background: rgba(33, 150, 243, 0.12); color: #42a5f5; border: 1px solid rgba(33, 150, 243, 0.25); }
+
+/* ── Table ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table thead tr {
+  border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.data-table th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  color: #546e7a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.data-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #cfd8dc;
+}
+
+.data-table tbody tr:hover td {
+  background: rgba(33, 150, 243, 0.04);
+}
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #455a64;
+}
+
+.empty-state .empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+}
+
+/* ── Divider ── */
+.section-divider {
+  height: 1px;
+  background: rgba(33, 150, 243, 0.1);
+  margin: 1.25rem 0;
+}
